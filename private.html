@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Private</title>
+</head>
+
+<body>
+    <marquee behavior="" direction="">Constructor Object</marquee>
+    <script>
+        function Person(first, last, age, company) {
+            this.firstName = first;
+            this.lastName = last;
+            this.myAge = age;
+            this.Wherecompany = company;
+            myLife = function () {
+                return this.mySelf.firstName + ' ' + this.mySelf.lastName;
+            }
+        }
+
+        var myFriend = new Person('Hyginus', 'Chike', 27, 'Andela');
+        var mySelf = new Person('Ebison', 'Gabriel', 28, 'NCAA');
+        myFriend.nationality = 'Nigerian';
+
+        console.log(
+            `${this.myFriend.firstName} is ${this.myFriend.myAge} and he works with ${this.myFriend.Wherecompany}`);
+        console.log(
+            `${this.mySelf['firstName']} is ${this['mySelf'].myAge} and he works with ${this['mySelf']['Wherecompany']}`
+        );
+        console.log(`${myFriend.firstName} is a ${myFriend.nationality}`);
+        console.log(this.myLife());
+
+        function myFunction(a, b) {
+            return a * b;
+        }
+        myArray = [10, 2];
+        myObject = myFunction.apply(myObject, myArray);
+        console.log(myObject);
+
+        function myFunction(a, b) {
+            return a * b;
+        }
+        myObject = myFunction.call(myObject, 10, 8);
+        console.log(myObject);
+
+
+        var myObject = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        console.log(myObject.fullName());
+    </script>
+</body>
+
+</html>
